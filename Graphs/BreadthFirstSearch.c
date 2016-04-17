@@ -47,9 +47,15 @@ void BFS (Graph* G, Vertex* S)
 
 int main (void)
 {
-	int i;
+	int i, S;
 	Graph *G = MakeGraph();
-	BFS (G, G -> V[1]);
+
+	printf ("Enter the source node index: ");
+	scanf ("%d", &S);
+
+	if (S >= G -> NoOfV)
+		return 1;
+	BFS (G, G -> V[S]);
 
 	printf ("All data are as follows: \n");
 	for (i = 0; i < (G -> NoOfV); i++)
