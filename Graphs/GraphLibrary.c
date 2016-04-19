@@ -18,6 +18,12 @@ typedef struct Vertex
 	// D value of that vertex.
 	int D;
 
+	// Time stamp for DFS discovered.
+	int DFSd;
+
+	// Time stamp for DFS finish.
+	int DFSf;
+
 	// Color for traversing algorithms.
 	char Color; // Values possible {'W', 'G', 'B'}
 
@@ -74,7 +80,7 @@ Edge* MakeEdge (Vertex* S, Vertex* Des, int W)
 	return TempE;
 }
 
-void PrintVertexData (Vertex *V)
+void PrintVertexBFS (Vertex *V)
 {
 	printf ("\nV%d", V -> V);
 	printf ("\nD(V%d) = %d", V -> V, V -> D);
@@ -90,12 +96,44 @@ void PrintVertexData (Vertex *V)
 	printf ("\n");
 }
 
-void PrintEdgeData (Edge *E)
+void PrintEdgeBFS (Edge *E)
 {
 	printf ("\nSource : V%d", E -> S -> V);
 	printf ("\nDestination : V%d", E -> Des -> V);
 	printf ("\nWeight : %d", E -> W);
 	printf ("\n");
+}
+
+void PrintVertexDFS (Vertex *V)
+{
+	printf ("\nV%d", V -> V);
+	printf ("\nD(V%d) = %d", V -> V, V -> DFSd);
+	printf ("\nF(V%d) = %d", V -> V, V -> DFSf);
+	printf ("\nColor = \'%c\'", V -> Color);
+	printf ("\nAdj(V%d) = ", V -> V);
+
+	AdjNode *P = V -> Adj;
+	while (P != NULL)
+	{
+		printf (" V%d ", P -> V -> V);
+		P = P -> Next;
+	}
+	printf ("\n");
+}
+
+void PrintGraphBFS (Graph *G)
+{
+	int i;
+	for (i = 0; i < (G -> NoOfV); i++)
+		PrintVertexBFS(G -> V[i]);
+
+}
+
+void PrintGraphDFS (Graph *G)
+{
+	int i;
+	for (i = 0; i < (G -> NoOfV); i++)
+		PrintVertexDFS(G -> V[i]);
 }
 
 AdjNode* MakeAdjNode (Vertex* V)

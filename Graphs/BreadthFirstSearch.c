@@ -58,11 +58,7 @@ int main (void)
 	BFS (G, G -> V[S]);
 
 	printf ("All data are as follows: \n");
-	for (i = 0; i < (G -> NoOfV); i++)
-		PrintVertexData(G -> V[i]);
-
-	for (i = 0; i < (G -> NoOfE); i++)
-		PrintEdgeData(G -> E[i]);
+	PrintGraphBFS (G);
 
 	return 0;
 }
