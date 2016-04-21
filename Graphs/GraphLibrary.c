@@ -33,6 +33,9 @@ typedef struct Vertex
 	// Parent to keep track of parent of the vertex (traversing)
 	struct Vertex *P;
 
+	// Rank for union find.		
+	int Rank;
+
 }Vertex;
 
 typedef struct Edge
@@ -91,6 +94,7 @@ void PrintVertexBFS (Vertex *V)
 	while (P != NULL)
 	{
 		printf (" V%d ", P -> V -> V);
+		printf ("(W = %d)", P -> W);
 		P = P -> Next;
 	}
 	printf ("\n");
@@ -161,9 +165,9 @@ int InsertAdj (Vertex *S, Vertex *Des, int W)
 	// Adding the edge to the graph.
 
 	TempAdj = MakeAdjNode (Des);
+	TempAdj -> W = W;
 	if (Q != NULL)
 		Q -> Next = TempAdj;
-
 	else
 		S -> Adj = TempAdj;
 	return 0;

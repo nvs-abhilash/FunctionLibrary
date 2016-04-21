@@ -4,78 +4,78 @@
 
 typedef struct Node
 {
-	struct Node* Parent;
+	struct Node* P;
 	int Vertex;
 	int Rank;
-}Element;
+}Vertex;
 
-Element* MakeSet(int X)
+Vertex* MakeSet(int X)
 {
-	Element* E1 = malloc (sizeof (Element));
-	E1 -> Parent = E1;
-	E1 -> Vertex = X;
+	Vertex *E1 = MakeVertex (X);
+	E1 -> P = E1;
 	E1 -> Rank = 0;
 	return E1;
 }
 
-Element* FindSet (Element* A)
+Vertex* FindSet (Vertex* A)
 {
-	if (A -> Parent == A)
+	if (A -> P == A)
 	{
-		printf (" %d |", A -> Vertex);
+		printf (" %d |", A -> V);
 
 		return A;
 	}
 
 	else
 	{
-		printf (" %d -> ", A -> Vertex);
+		printf (" %d -> ", A -> V);
 
-		A -> Parent = FindSet(A -> Parent);
-		return A -> Parent;
+		A -> P = FindSet(A -> P);
+		return A -> P;
 	}
 }
 
-void Link(Element* Parent1, Element* Parent2)
+void Link(Vertex* P1, Vertex* P2)
 {
-	if (Parent1 -> Rank > Parent2 -> Rank)
+	if (P1 -> Rank > P2 -> Rank)
 	{
-		// Join to parent1.
-		Parent2 -> Parent = Parent1;
+		// Join to P1.
+		P2 -> P = P1;
 	}
 
-	else if (Parent1 -> Rank < Parent2 -> Rank)
+	else if (P1 -> Rank < P2 -> Rank)
 	{
-		// Join to parent2.
-		Parent1 -> Parent = Parent2;
+		// Join to P2.
+		P1 -> P = P2;
 	}
 
 	else
 	{
-		Parent2 -> Parent = Parent1;
-		Parent1 -> Rank += 1;
+		P2 -> P = P1;
+		P1 -> Rank += 1;
 	}
 }
 
-void Union(Element *A, Element* B)
+void Union(Vertex *A, Vertex* B)
 {
-	Element* Aparent = FindSet(A);
-	Element* Bparent = FindSet(B);
+	Vertex* AP = FindSet(A);
+	Vertex* BP = FindSet(B);
 
-	if (Aparent != Bparent)
+	if (AP != BP)
 	{
-		Link (Aparent, Bparent);
+		Link (AP, BP);
 		printf ("\n\tUnion done!\n");
 	}
 	else
-		fprintf (stderr, "\n\tSame parent cant do union!\n");
+		fprintf (stderr, "\n\tSame P cant do union!\n");
 
 }
 
+/*
 int main ()
 {
 	// Menu Driven Program.
-	Element *Data[100], *RootNode;
+	Vertex *Data[100], *RootNode;
 	int c = 1;
 	int Index = 0, CurIndex = 0, Index1 = 0, Index2 = 0, X = 0;
 
@@ -164,3 +164,4 @@ int main ()
 
 	return 0;
 }
+*/
