@@ -50,16 +50,9 @@ void Enqueue (Vertex **Q, Vertex *V)
 Vertex* Dequeue (Vertex** Q)
 {
 	int Temp;
-	
+
 	if (Front == -1)
 		return NULL;
-
-	if (Rear == 0 && Front != 0)
-	{
-		Rear = MaxSize - 1;
-		return Q[Rear + 1];
-	}
-
 	if (Front == Rear)
 	{
 		Front = -1;
@@ -67,6 +60,7 @@ Vertex* Dequeue (Vertex** Q)
 		Rear = -1;
 		return Q[Temp];
 	}
-
-	return Q[Rear--];
+	Temp = Front;
+    Front = (Front + 1) % MaxSize;
+	return Q[Temp];
 }
