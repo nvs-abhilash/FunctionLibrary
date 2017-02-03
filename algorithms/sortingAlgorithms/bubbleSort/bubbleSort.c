@@ -1,39 +1,26 @@
 #include <stdio.h>
-#include "DisplayArray.c"
-#include "Swap.c"
+#include "basicPrograms.h"
 
-int BubbleSort(int *Arr, int Size)
+int bubbleSort (int *arr, int arrSize)
 {
-    if (Size < 0)
+    if (arr == NULL || arrSize < 0)
         return 1;
-        
-    int i = 0, j = 0;
-    for (i = 0; i < Size; i++)
+
+    int flag, i;
+
+    do
     {
-        for (j = 1; j < (Size - i); j++)
+      flag = 0;
+
+      for (i = 0; i < arrSize - 1; ++i)
+      {
+        if (arr[i] > arr[i + 1])
         {
-            if (Arr[j - 1] > Arr[j])
-                Swap (Arr, j - 1, j);
+          flag = 1;
+          swap (arr, i, i + 1);
         }
-    }
+      }
+    } while (flag);
 
     return 0;
 }
-
-
-// Test code to run the function.
-
-/*
-int main()
-{
-    int Arr [] = {9,8,5,7,3,4,2,6,1,0};
-    int Size = 10;
-
-    BubbleSort(Arr, Size);
-
-    printf ("Sorted array: ");
-    DisplayArr(Arr, Size);
-
-    return 0;
-}
-*/
