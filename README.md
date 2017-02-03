@@ -42,3 +42,19 @@
 
 #### If not implemented:
   * Implement it :) (You will learn a lot)
+
+### Contributing Guidelines
+  There were no specific guidelines when I wrote these functions.
+  But now there is a need of it.
+
+  So, here are some guidelines:
+
+#### C/C++
+  * Variable and function names should start with small letters.
+  * Every folder should be named exactly the central function of that folder.
+  * One of the examples of naming conventions is sortingAlgorithms/bubbleSort.
+  * There should space between function name and parenthesis.
+    `printf ("Hello, world");` **CORRECT**
+    `printf("Hello, world");` **INCORRECT**
+
+##### **NOTE**: Any code not following above guidelines is treated as a bug.
