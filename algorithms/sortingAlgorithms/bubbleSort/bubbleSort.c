@@ -18,7 +18,7 @@
 */
 
 #include <stdio.h>
-#include "basicPrograms.h"
+#include "include/basicPrograms.h"
 
 int bubbleSort (int *arr, int arrSize)
 {

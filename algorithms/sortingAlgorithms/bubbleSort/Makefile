@@ -26,8 +26,8 @@ compile: $(objects)
 main.o: main.c
 	$(compiler) $(options) -c main.c
 
-basicPrograms.o: basicPrograms.c
-	$(compiler) $(options) -c basicPrograms.c
+basicPrograms.o: include/basicPrograms.c
+	$(compiler) $(options) -c include/basicPrograms.c
 
 bubbleSort.o: bubbleSort.c
 	$(compiler) $(options) -c bubbleSort.c

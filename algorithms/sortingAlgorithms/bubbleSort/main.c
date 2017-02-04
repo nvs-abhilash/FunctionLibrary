@@ -18,7 +18,7 @@
 */
 
 #include <stdio.h>
-#include "basicPrograms.h"
+#include "include/basicPrograms.h"
 #include "bubbleSort.h"
 
 // Test code to run the bubbleSort function.
