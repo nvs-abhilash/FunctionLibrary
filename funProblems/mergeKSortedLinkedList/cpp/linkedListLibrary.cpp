@@ -22,48 +22,49 @@
 
 using namespace std;
 
-void updateHead(node *arr[],int x)
+void updateHead (node *arr[], int x)
 {
-    arr[x] = arr[x]->next; 
+    arr[x] = arr[x]->next;
 }
-void traverse(node *arr[],int n)
+void traverse (node *arr[], int n)
 {
     cout << "GENERATING LIST..." << endl;
     int i = 0;
-    while(i < n)
+    while (i < n)
     {
         node *t;
-        cout << "Printing list " << i+1 << ": ";
-        for(t = arr[i]; t!= NULL; t = t->next)
-        {
+        cout << "Printing list " << i + 1 << ": ";
+
+        for(t = arr[i]; t != NULL; t = t->next)
             cout << t->data << "  ";
-        }
+
         cout << endl;
         i++;
     }
 }
 
-node *makeLL(int n)
+node *makeLL (int n)
 {
     int x, i = 0;;
     struct node *temp, *newnode;
     node *head = new node;
     temp = new node;
     newnode = new node;
-    cout << "Enter the value for node " << i+1 << ": ";
-    cin >> x; 
+
+    cout << "Enter the value for node " << i + 1 << ": ";
+    cin >> x;
     head->data = x;
     head->next = NULL;
     temp = head;
-    for(i = 1; i < n; i++)
-    {
-        if(head == NULL)
-        cout << "Head is not allocated memory" << endl;
 
+    for (i = 1; i < n; i++)
+    {
+        if (head == NULL)
+          cout << "Head is not allocated memory" << endl;
         else
         {
             cout << "Enter the value for node " << i+1 << ": ";
-            cin >> x; 
+            cin >> x;
             newnode = new node;
             newnode->data = x;
             newnode->next = NULL;
@@ -72,4 +73,4 @@ node *makeLL(int n)
         }
     }
     return head;
-}   
+}

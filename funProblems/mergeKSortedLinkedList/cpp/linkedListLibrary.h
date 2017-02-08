@@ -17,17 +17,19 @@
 *
 */
 
-#ifndef HEAP_LIBRARY_H
-#define HEAP_LIBRARY_H
+#ifndef LINKED_LIST_LIBRARY_H
+#define LINKED_LIST_LIBRARY_H
 
-void maxHeapify(int *arr,int i, int heapSize);
+struct node
+{
+    int data;
+    struct node *next;
+};
 
-void buildHeap(int *arr, int x);
+void updateHead (node *arr[], int x);
 
-int extractMax(int *arr,int x);
+void traverse (node *arr[], int n);
 
-void heapIncreaseKey(int *arr,int i,int key);
-
-void insert(int *arr,int key,int x);
+node *makeLL (int n);
 
 #endif

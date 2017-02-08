@@ -22,15 +22,16 @@
 
 using namespace std;
 
-void maxHeapify(int *arr,int i, int heapSize)
+void maxHeapify (int *arr, int i, int heapSize)
 {
-    int l = 2*i, largest, temp;
-    int r = 2*i + 1;
-    if(l <= heapSize && arr[l] > arr[i])
+    int l = 2 * i, largest, temp;
+    int r = 2 * i + 1;
+
+    if (l <= heapSize && arr[l] > arr[i])
         largest = l;
     else
         largest = i;
-    if(r <= heapSize && arr[r] > arr[largest])
+    if (r <= heapSize && arr[r] > arr[largest])
         largest = r;
 
     if(largest != i)
@@ -38,50 +39,53 @@ void maxHeapify(int *arr,int i, int heapSize)
         temp = arr[largest];
         arr[largest] = arr[i];
         arr[i] = temp;
-        maxHeapify(arr,largest,heapSize);
+        maxHeapify (arr, largest, heapSize);
     }
 }
 
-void buildHeap(int *arr, int x)
+void buildHeap (int *arr, int x)
 {
     int heapSize = x;
     int i;
-    for(i = heapSize/2; i > -1; i--)
-    {
-        maxHeapify(arr,i,heapSize);
-    }
+    for (i = heapSize / 2; i > -1; i--)
+        maxHeapify (arr, i, heapSize);
 }
 
-int extractMax(int *arr,int x)
+int extractMax (int *arr, int x)
 {
-    int heapSize = x+1;
+    int heapSize = x + 1;
+
     if(heapSize < 1)
-        cout << "Error found\n";
+        cout << "Error found" << endl;
+
     int max = arr[0];
     arr[0] = arr[x];
     heapSize--;
-    maxHeapify(arr,1,heapSize);
+
+    maxHeapify (arr, 1, heapSize);
+
     return max;
 }
 
-void heapIncreaseKey(int *arr,int i,int key)
+void heapIncreaseKey (int *arr, int i, int key)
 {
     int temp;
     if(key < arr[i])
-        cout << "Error found\n";
+        cout << "Error found" << endl;
+
     arr[i] = key;
-    while(i > 0 && arr[i/2] < arr[i])
+    while (i > 0 && arr[i / 2] < arr[i])
     {
-        temp = arr[i/2];
-        arr[i/2] = arr[i];
+        temp = arr[i / 2];
+        arr[i / 2] = arr[i];
         arr[i] = temp;
-        i = i/2;
+        i = i / 2;
     }
 }
 
-void insert(int *arr,int key,int x)
+void insert (int *arr, int key, int x)
 {
     int heapSize = x;
     arr[heapSize] = -9999;
-    heapIncreaseKey(arr,heapSize,key);
+    heapIncreaseKey (arr, heapSize, key);
 }
