@@ -16,25 +16,29 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>
 *
 */
-
 #include <iostream>
 #include "linearSearch.h"
 using namespace std;
 
 // function that searches for a number seqentially in an array.
-void linearSearch(int arry[], int length, int FindMe) {
-    int i = 0;
+void linearSearch (int arry[] , int length , int findMe) 
+{
+    int marker = 0;
     bool check = false;
 
-    for (i = 0; i < length; i++ ) {
-       if ( arry[i] == FindMe ) {
-            cout << FindMe << " is at " << i+1 <<" position\n";
+    for (marker = 0; marker < length; marker++) 
+    {
+       if ( arry[marker] == findMe ) 
+       {
+            cout << findMe << " is at " << marker+1 <<" position\n";
             check = true;
             break;
         }
         
     }
-    if (!check) {
+    if (!check) 
+    {
         cout  << "Number not found\n";
     }
 }
+

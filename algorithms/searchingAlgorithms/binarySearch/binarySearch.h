@@ -17,4 +17,5 @@
 *
 */
 
-extern void BinarySearch (int arry[], int length, int FindMe);
+extern void binarySearch (int arry[] , int length , int findMe);
+

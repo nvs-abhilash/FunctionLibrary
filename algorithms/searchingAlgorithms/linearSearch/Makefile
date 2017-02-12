@@ -15,7 +15,6 @@
  # You should have received a copy of the GNU General Public License
  # along with this program.  If not, see <http://www.gnu.org/licenses/>
  #
-
 compiler = g++
 options = -Wall -Werror
 objects = main.o linearSearch.o
@@ -34,3 +33,4 @@ run: compile main
 
 clean:
 	rm -rf *.o main
+

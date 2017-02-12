@@ -15,10 +15,9 @@
  # You should have received a copy of the GNU General Public License
  # along with this program.  If not, see <http://www.gnu.org/licenses/>
  #
-
 compiler = g++
 options = -Wall -Werror
-objects = main.o BinarySearch.o
+objects = main.o binarySearch.o
 
 compile: $(objects)
 	$(compiler) $(options) $(objects) -o main
@@ -26,11 +25,12 @@ compile: $(objects)
 main.o: main.cpp
 	$(compiler) $(options) -c main.cpp
 
-BinarySearch.o: BinarySearch.cpp
-	$(compiler) $(options) -c BinarySearch.cpp
+binarySearch.o: binarySearch.cpp
+	$(compiler) $(options) -c binarySearch.cpp
 
 run: compile main 
 	./main
 
 clean:
 	rm -rf *.o main
+

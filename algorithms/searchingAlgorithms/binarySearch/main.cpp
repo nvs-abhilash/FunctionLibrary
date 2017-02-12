@@ -16,20 +16,20 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>
 *
 */
-
 #include <iostream>
-#include "BinarySearch.h"
+#include "binarySearch.h"
 #define MAX 10
-
 using namespace std;
 
-int main (void){
-    int arry[MAX] = {1,3,5,7,9,11,13,15,17,19};
-    int FindMe;
+int main (void)
+{
+    int arry[MAX] = {1 , 3 , 5 , 7 , 9 , 11 , 13 , 15 , 17 , 19};
+    int findMe;
     
     cout << "Enter the number you want to search for\n";
-    cin  >> FindMe;
+    cin  >> findMe;
 
-    BinarySearch (arry,MAX,FindMe);
+    binarySearch (arry , MAX , findMe);
     return 0;
 }
+

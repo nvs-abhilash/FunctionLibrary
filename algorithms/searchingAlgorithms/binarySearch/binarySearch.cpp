@@ -18,34 +18,39 @@
 */
 
 #include <iostream>
-#include "BinarySearch.h"
+#include "binarySearch.h"
 using namespace std;
 
 // function that searches for a number using binary search algorithm.
-void BinarySearch(int arry[], int length, int FindMe) {
-    int startPos,endPos,midVal;
+void binarySearch (int arry[] , int length , int findMe) 
+{
+    int startPos , endPos , midVal;
     bool check = false;
     
     startPos = 0;
     endPos = length-1;
     midVal = (startPos + endPos) /2;
 
-    while (startPos <= endPos){
+    while (startPos <= endPos)
+    {
         midVal = (startPos + endPos) /2;  
-    
-        if (arry[midVal] == FindMe){
-            cout << FindMe << " is at " << midVal+1 <<" position\n";
+        if (arry[midVal] == findMe)
+        {
+            cout << findMe << " is at " << midVal+1 <<" position\n";
             check = true;
             break;
         }
-        else if (arry[midVal] > FindMe){
+        else if (arry[midVal] > findMe)
+        {
             endPos = midVal - 1;
         }
         else   
             startPos = midVal + 1;
     }
     
-    if(!check){
+    if(!check)
+    {
         cout << "Number not found\n";
     }
 }
+

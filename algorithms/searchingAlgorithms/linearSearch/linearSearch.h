@@ -17,4 +17,4 @@
 *
 */
 
-extern void linearSearch (int arry[], int length, int FindMe);
+extern void linearSearch (int arry[] , int length , int findMe);

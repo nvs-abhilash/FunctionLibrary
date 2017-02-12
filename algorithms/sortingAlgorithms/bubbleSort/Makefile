@@ -37,3 +37,4 @@ run: compile main
 
 clean:
 	rm -rf *.o main
+	

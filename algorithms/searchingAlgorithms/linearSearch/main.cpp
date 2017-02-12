@@ -16,20 +16,20 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>
 *
 */
-
 #include <iostream>
 #include "linearSearch.h"
 #define MAX 10
-
 using namespace std;
 
-int main (void){
-    int arry[MAX] = {19, 12, 3, 32, 1, 15, 7, 90, 89, 34};
-    int FindMe;
+int main (void)
+{
+    int arry[MAX] = {19 , 12 , 3 , 32 , 1 , 15 , 7 , 90 , 89 , 34};
+    int findMe;
     
     cout << "Enter the number you want to search for\n";
-    cin  >> FindMe;
+    cin  >> findMe;
 
-    linearSearch (arry,MAX,FindMe);
+    linearSearch (arry , MAX , findMe);
     return 0;
 }
+
