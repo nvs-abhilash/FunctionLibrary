@@ -29,7 +29,7 @@ main.o: main.cpp
 linearSearch.o: linearSearch.cpp
 	$(compiler) $(options) -c linearSearch.cpp
 
-run: compile main
+run: compile main 
 	./main
 
 clean:
