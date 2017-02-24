@@ -30,7 +30,6 @@ int linearSearch (int arry[] , int length , int findMe)
        if ( arry[marker] == findMe ) 
        {
             return marker;
-            break;
         }
         
     }

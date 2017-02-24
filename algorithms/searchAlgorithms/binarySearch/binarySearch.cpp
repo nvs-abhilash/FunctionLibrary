@@ -36,7 +36,6 @@ int binarySearch (int arry[] , int length , int findMe)
         if (arry[midVal] == findMe)
         {
             return midVal;
-            break;
         }
         else if (arry[midVal] > findMe)
         {
