@@ -22,10 +22,9 @@
 using namespace std;
 
 // function that searches for a number using binary search algorithm.
-void binarySearch (int arry[] , int length , int findMe) 
+int binarySearch (int arry[] , int length , int findMe) 
 {
     int startPos , endPos , midVal;
-    bool check = false;
     
     startPos = 0;
     endPos = length-1;
@@ -36,8 +35,7 @@ void binarySearch (int arry[] , int length , int findMe)
         midVal = (startPos + endPos) /2;  
         if (arry[midVal] == findMe)
         {
-            cout << findMe << " is at " << midVal+1 <<" position\n";
-            check = true;
+            return midVal;
             break;
         }
         else if (arry[midVal] > findMe)
@@ -46,11 +44,7 @@ void binarySearch (int arry[] , int length , int findMe)
         }
         else   
             startPos = midVal + 1;
-    }
-    
-    if(!check)
-    {
-        cout << "Number not found\n";
-    }
+    }  
+     return -1;        
 }
 

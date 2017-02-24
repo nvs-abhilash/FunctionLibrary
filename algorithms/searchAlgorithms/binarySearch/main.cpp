@@ -25,11 +25,13 @@ int main (void)
 {
     int arry[MAX] = {1 , 3 , 5 , 7 , 9 , 11 , 13 , 15 , 17 , 19};
     int findMe;
+    int answer;
     
     cout << "Enter the number you want to search for\n";
     cin  >> findMe;
 
-    binarySearch (arry , MAX , findMe);
+    answer = binarySearch (arry , MAX , findMe);
+    cout << answer << endl;
     return 0;
 }
 

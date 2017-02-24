@@ -25,11 +25,13 @@ int main (void)
 {
     int arry[MAX] = {19 , 12 , 3 , 32 , 1 , 15 , 7 , 90 , 89 , 34};
     int findMe;
-    
+    int answer;
+
     cout << "Enter the number you want to search for\n";
     cin  >> findMe;
 
-    linearSearch (arry , MAX , findMe);
+    answer = linearSearch (arry , MAX , findMe);
+    cout << answer << endl;
     return 0;
 }
 

@@ -21,24 +21,20 @@
 using namespace std;
 
 // function that searches for a number seqentially in an array.
-void linearSearch (int arry[] , int length , int findMe) 
+int linearSearch (int arry[] , int length , int findMe) 
 {
     int marker = 0;
-    bool check = false;
-
+    
     for (marker = 0; marker < length; marker++) 
     {
        if ( arry[marker] == findMe ) 
        {
-            cout << findMe << " is at " << marker+1 <<" position\n";
-            check = true;
+            return marker;
             break;
         }
         
     }
-    if (!check) 
-    {
-        cout  << "Number not found\n";
-    }
+
+    return -1;
 }
 
