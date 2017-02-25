@@ -16,9 +16,11 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>
 *
 */
+
 #include <iostream>
 #include "linearSearch.h"
 #define MAX 10
+
 using namespace std;
 
 int main (void)
@@ -27,11 +29,17 @@ int main (void)
     int findMe;
     int answer;
 
-    cout << "Enter the number you want to search for\n";
+    cout << "arry[] = {19 , 12 , 3 , 32 , 1 , 15 , 7 , 90 , 89 , 34}" << endl;
+
+    cout << "Enter the number you want to search: ";
     cin  >> findMe;
 
     answer = linearSearch (arry , MAX , findMe);
-    cout << answer << endl;
+
+    if (answer != -1)
+        cout << "Element first occurs at index " << answer << endl;
+    else
+        cout << "Elemnt not found." << endl;
+
     return 0;
 }
-
