@@ -53,8 +53,5 @@
   * Variable and function names should start with small letters.
   * Every folder should be named exactly the central function of that folder.
   * One of the examples of naming conventions is sortingAlgorithms/bubbleSort.
-  * There should space between function name and parenthesis.
-    `printf ("Hello, world");` **CORRECT**
-    `printf("Hello, world");` **INCORRECT**
-
+    
 ##### **NOTE**: Any code not following above guidelines is treated as a bug.
