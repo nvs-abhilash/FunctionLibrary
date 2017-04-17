@@ -31,3 +31,4 @@ run: compile helloWorld
 
 clean:
 	rm -rf *.o helloWorld
+	
